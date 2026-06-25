@@ -41,3 +41,21 @@ Successfully created and pushed the first version of RedHawk Copilot to GitHub.
 
 Repository Status:
 Phase 0 Completed
+
+## Day 2 - Project Structure
+
+### Objectives
+
+- Create project folders
+- Create source modules
+- Add module documentation
+
+### What I Learned
+
+- Why software projects need structure
+- Difference between modules and folders
+- What module docstrings are
+
+### Outcome
+
+RedHawk Copilot project structure created.
