@@ -27,3 +27,4 @@
 13. Use real lab data whenever possible.
 14. Understand first, code second, optimize later.
 15. AI-generated code is accepted only after understanding every line.
+16. If documentation and code disagree, update the documentation immediately or fix the code. Never let them drift apart.
