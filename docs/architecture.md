@@ -86,3 +86,28 @@ Future
 - Nmap XML
 - Wazuh Logs
 - Real Authorized Lab Data
+
+## Parser Flow
+
+Nmap XML
+     │
+     ▼
+load_xml()
+     │
+     ▼
+Root Element
+     │
+     ▼
+Host
+     │
+     ▼
+Ports
+     │
+     ▼
+Port List
+     │
+     ▼
+For Loop
+     │
+     ▼
+Port Information

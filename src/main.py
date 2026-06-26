@@ -22,28 +22,35 @@ def main():
     """
 
     # Load XML file
-    root = load_xml("scans/sample_scan.xml")
+    root = load_xml("scans/metasploitable2_scan.xml")
 
     # Find required XML elements
     host = root.find("host")
     status = host.find("status")
     address = host.find("address")
+    ports = host.find("ports")
+    all_ports = ports.findall("port")
 
     # Extract attribute values
     state = status.get("state")
     ip_address = address.get("addr")
-    address_type = address.get("addrtype")
 
     print("XML loaded successfully.")
-
-    print("Root tag:", root.tag)
 
     # Printing the host information
     print("\nHost Information")
     print("-"*20)
     print("Status : ", state)
     print("IP Address : ", ip_address)
-    print("Address Type : ", address_type)
+    print("\nOpen Ports")
+    print("-" * 20)
+
+    for port in all_ports:
+        port_id = port.get("portid")
+        protocol = port.get("protocol")
+        print(f"{port_id} / {protocol}")
+
+
 
 if __name__ == "__main__":
     main()

@@ -324,3 +324,68 @@ Future development will focus on building an AI-powered penetration testing assi
 ### Outcome
 
 RedHawk Copilot now has a complete documentation framework that will evolve alongside the project.
+
+---
+
+# Day 5 - Real Nmap XML Parsing
+
+**Date:** 26 June 2026
+
+## Objectives
+
+- Replace the sample XML file with a real Nmap scan report.
+- Learn the structure of a real Nmap XML file.
+- Parse host information from the XML.
+- Extract and display all open TCP ports.
+- Practice XML debugging using a real scan report.
+
+## What I Learned
+
+- A real Nmap XML file contains much more information than a simple learning example.
+- The `<ports>` element acts as the parent container for multiple `<port>` elements.
+- `find()` returns only the first matching child element.
+- `findall()` returns a list of all matching child elements.
+- A `for` loop is required to process each XML element in the list.
+- The `get()` method is used to retrieve attribute values such as `portid` and `protocol`.
+- Reading Python tracebacks helps identify whether an issue is caused by the code or by the input data.
+- XML editor warnings are not always runtime errors; it is important to distinguish between validation warnings and parsing errors.
+
+## Challenges
+
+- The copied Nmap XML file contained a malformed line that caused an `ElementTree.ParseError`.
+- Initially confused the `<ports>` XML element with the list returned by `findall()`.
+- Needed to understand why `get()` works on a single XML element but not on a list.
+
+## Solution
+
+- Located and corrected the malformed XML syntax.
+- Used `host.find("ports")` to access the parent `<ports>` element.
+- Used `ports.findall("port")` to retrieve all `<port>` elements.
+- Processed each port individually using a `for` loop.
+- Extracted `portid` and `protocol` attributes for every open port.
+
+## Outcome
+
+Successfully parsed a real Nmap XML report generated from the authorized Metasploitable 2 lab environment.
+
+The application now:
+
+- Loads a real Nmap XML scan.
+- Extracts host status.
+- Extracts the target IP address.
+- Enumerates all detected open TCP ports.
+- Displays each port number with its protocol.
+
+## Next Objectives
+
+- Extract service information from each port.
+- Read service name, product, version and additional details.
+- Begin building the analysis engine that will generate security recommendations from the parsed data.
+
+## Repository Status
+
+Phase 1 Progress: **Completed**
+
+Current Milestone:
+
+✅ First successful parsing of a real-world Nmap XML report.

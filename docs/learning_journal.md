@@ -66,3 +66,15 @@ I learned how to extract host information from an Nmap XML file and debug Python
 I also learned the difference between elements and attributes.
 
 Understanding the logic behind the code is more important than simply making the program work.
+
+## Lesson: XML Lists and Loops
+
+Today I learned that XML trees can contain multiple child elements with the same name.
+
+Using find() returns only the first matching child.
+
+Using findall() returns a Python list containing every matching child.
+
+A Python for loop is then used to process each XML element individually.
+
+This was my first successful experience parsing a real-world Nmap XML report instead of a simplified learning example.

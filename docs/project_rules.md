@@ -28,3 +28,4 @@
 14. Understand first, code second, optimize later.
 15. AI-generated code is accepted only after understanding every line.
 16. If documentation and code disagree, update the documentation immediately or fix the code. Never let them drift apart.
+17. Whenever a new parser feature is completed using a real cybersecurity lab environment, the learning outcome, architecture changes, and development log must all be updated before pushing to GitHub.
