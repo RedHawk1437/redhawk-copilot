@@ -241,3 +241,58 @@ Goals:
 - Find child elements
 - Extract host information
 - Understand XML navigation
+
+---
+
+## Day 4 - XML Tree Navigation and Host Information
+
+### Date
+
+26 June 2026
+
+### Objectives
+
+- Learn XML tree navigation
+- Access child elements using `find()`
+- Read XML attributes using `get()`
+- Display host information from an Nmap XML file
+- Practice debugging Python errors
+
+### What I Learned
+
+- How to navigate an XML tree from the root element to child elements
+- Difference between XML elements and XML attributes
+- How `find()` locates child elements
+- How `get()` retrieves attribute values
+- Why variables must be created before they can be used
+- Importance of following Python naming conventions (`snake_case`)
+
+### Challenges
+
+- Encountered a `NameError` because the `status` and `address` variables were used before they were defined.
+
+### Solution
+
+- Created the missing variables using `find()`
+- Retrieved attribute values using `get()`
+- Renamed variables to follow Python's standard naming convention
+
+### Outcome
+
+Successfully extracted and displayed:
+
+- Host Status
+- IP Address
+- Address Type
+
+The parser can now navigate an XML tree and extract useful host information.
+
+### Project Vision Update
+
+The project direction has become clearer.
+
+Instead of relying only on sample XML files, RedHawk Copilot will gradually transition to parsing real Nmap scan results generated inside my own authorized cybersecurity lab.
+
+This project is being developed for learning, portfolio building, and authorized security assessments only.
+
+Future development will focus on building an AI-powered penetration testing assistant that teaches, explains, and assists during authorized engagements.
