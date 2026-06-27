@@ -389,3 +389,63 @@ Phase 1 Progress: **Completed**
 Current Milestone:
 
 ✅ First successful parsing of a real-world Nmap XML report.
+
+---
+
+# Day 7 - Service Enumeration and Conditional Logic
+
+Date: 27 June 2026
+
+## Objectives
+
+- Parse service information for every open port.
+- Extract service attributes from the Nmap XML.
+- Display service details in a structured format.
+- Learn how conditional statements (if) can be used to filter specific services.
+
+## What I Learned
+
+- XML elements can contain other child elements, creating a tree structure.
+- The `<service>` element is a child of each `<port>` element.
+- Service information such as name, product, and version is stored as attributes.
+- Attributes are accessed using the `get()` method.
+- A loop allows processing every discovered port individually.
+- Conditions (`if`) can be used to filter output based on specific attribute values.
+- In Python, each comparison must be written explicitly (e.g., `service_name == "http" or service_name == "ftp"`).
+
+## Challenges
+
+- Initially attempted to access the `<service>` element directly from the `<host>` element instead of from each `<port>`.
+- Confused assignment (`=`) with comparison (`==`) inside an `if` statement.
+- Used the C/C++ logical operator `&&` instead of Python's `and`.
+- Learned that `if service_name == "http" or "ftp"` is not valid logic in Python because `"ftp"` is always treated as a truthy value.
+
+## Solution
+
+- Moved service parsing inside the port loop.
+- Retrieved the `<service>` element from each `<port>`.
+- Extracted service attributes using the `get()` method.
+- Corrected the comparison logic by comparing each value explicitly.
+
+## Outcome
+
+RedHawk Copilot can now successfully parse and display:
+
+- Host status
+- Host IP address
+- Port number
+- Protocol
+- Port state
+- Service name
+- Product name
+- Version information
+
+using a real Metasploitable 2 Nmap XML scan.
+
+Project Status:
+
+Phase 1 Progressing Successfully
+
+Next Goal:
+
+Implement intelligent service filtering and begin building the analysis engine that will transform parsed data into actionable security insights.

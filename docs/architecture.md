@@ -111,3 +111,49 @@ For Loop
      │
      ▼
 Port Information
+
+## Current Architecture
+
+main.py
+
+↓
+
+load_xml()
+
+↓
+
+ElementTree
+
+↓
+
+Host Parser
+
+↓
+
+Port Parser
+
+↓
+
+Service Parser
+
+↓
+
+Console Output
+
+Current Modules
+
+parser.py
+- XML loading
+- Root element extraction
+
+main.py
+- Host parsing
+- Port enumeration
+- Service enumeration
+- Output formatting
+
+Future Modules
+
+analysis.py
+knowledge_base.py
+report_generator.py

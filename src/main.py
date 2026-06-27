@@ -26,29 +26,40 @@ def main():
 
     # Find required XML elements
     host = root.find("host")
-    status = host.find("status")
-    address = host.find("address")
+    host_status = host.find("status")
+    host_address = host.find("address")
     ports = host.find("ports")
     all_ports = ports.findall("port")
 
     # Extract attribute values
-    state = status.get("state")
-    ip_address = address.get("addr")
+    host_state = host_status.get("state")
+    ip_address = host_address.get("addr")
 
     print("XML loaded successfully.")
 
     # Printing the host information
     print("\nHost Information")
     print("-"*20)
-    print("Status : ", state)
+    print("Status : ", host_state)
     print("IP Address : ", ip_address)
     print("\nOpen Ports")
     print("-" * 20)
 
     for port in all_ports:
+        state = port.find("state")
+        service =port.find("service")
         port_id = port.get("portid")
         protocol = port.get("protocol")
-        print(f"{port_id} / {protocol}")
+        port_state = state.get("state")
+        service_name = service.get("name")
+        service_product = service.get("product")
+        service_version = service.get("version")
+        print("-" * 20)
+        print(f"Port : {port_id}/{protocol}")
+        print(f"Port State :  {port_state}")
+        print(f"Port Service :  {service_name}")
+        print(f"Port Product :  {service_product}")
+        print(f"Port Version :  {service_version}")
 
 
 
