@@ -157,3 +157,25 @@ Future Modules
 analysis.py
 knowledge_base.py
 report_generator.py
+
+## Current Processing Flow
+
+Nmap XML
+    │
+    ▼
+XML Parser
+    │
+    ▼
+Host Information
+    │
+    ▼
+Port Enumeration
+    │
+    ▼
+Service Enumeration
+    │
+    ▼
+Interactive Service Filtering
+    │
+    ▼
+Matching Service Output

@@ -42,8 +42,19 @@ def main():
     print("-"*20)
     print("Status : ", host_state)
     print("IP Address : ", ip_address)
+
+    # Getting Input from user about the Targeted Service
+    target_service = input("Enter the Target Service : ")
+    target_service = target_service.lower()
+    target_service = target_service.strip()
+    print("Target Service is : ", target_service)
+
+    # Printing the Targeted services with their Ports and other information
     print("\nOpen Ports")
-    print("-" * 20)
+
+    #Making a Service Found Condition
+    target_service_found = False
+    target_service_count = 0
 
     for port in all_ports:
         state = port.find("state")
@@ -52,14 +63,31 @@ def main():
         protocol = port.get("protocol")
         port_state = state.get("state")
         service_name = service.get("name")
-        service_product = service.get("product")
-        service_version = service.get("version")
+
+
+        # Compare the targeted service with the XML data
+        if service_name == target_service:
+            target_service_found = True
+            service_product = service.get("product")
+            service_version = service.get("version")
+            print("-" * 20)
+            print(f"Port : {port_id}/{protocol}")
+            print(f"Port State :  {port_state}")
+            print(f"Port Service :  {service_name}")
+            print(f"Port Product :  {service_product}")
+            print(f"Port Version :  {service_version}")
+            target_service_count += 1
+
+    # Target Service Status
+    if not target_service_found:
+        print(f"\nTarget Service Status")
         print("-" * 20)
-        print(f"Port : {port_id}/{protocol}")
-        print(f"Port State :  {port_state}")
-        print(f"Port Service :  {service_name}")
-        print(f"Port Product :  {service_product}")
-        print(f"Port Version :  {service_version}")
+        print("Target Service not found.")
+
+    # Count the Founded Targeted Services
+    print(f"\nTotal Target Service Count")
+    print("-" * 20)
+    print(f"Matching Target Services Count is : {target_service_count}")
 
 
 

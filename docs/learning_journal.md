@@ -115,3 +115,34 @@ Conditional Logic  ███████░░░ 70%
 Service Enumeration ██████████ 100%
 
 Overall Python Understanding ████████░░ 80%
+
+# Learning Journal
+
+## Topic
+Interactive XML Filtering
+
+### Concepts Practiced
+
+- User Input
+- String Normalization
+- Boolean Variables
+- Integer Counters
+- Conditional Statements
+- XML Filtering
+- Service Enumeration
+
+### Key Lesson
+
+A boolean variable answers:
+
+"Was something found?"
+
+An integer counter answers:
+
+"How many were found?"
+
+These two variables solve different problems and should not replace each other.
+
+### Personal Reflection
+
+Today I successfully implemented my first interactive search feature using Python and XML. I can now filter scan results instead of printing every available service.

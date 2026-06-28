@@ -449,3 +449,47 @@ Phase 1 Progressing Successfully
 Next Goal:
 
 Implement intelligent service filtering and begin building the analysis engine that will transform parsed data into actionable security insights.
+
+# Development Log
+
+## Date
+2026-06-28
+
+## Session Goal
+Implement interactive service filtering for RedHawk Copilot using real Nmap XML data from the Metasploitable 2 lab.
+
+## Tasks Completed
+
+- Added user input for selecting a target service.
+- Normalized user input using `strip()` and `lower()`.
+- Implemented service filtering using an `if` statement inside the port loop.
+- Added a boolean flag (`target_service_found`) to detect missing services.
+- Implemented a service counter (`target_service_count`) to count all matching services.
+- Displayed complete information for every matching service:
+  - Port Number
+  - Protocol
+  - Port State
+  - Service Name
+  - Product
+  - Version
+- Added a user-friendly message when no matching service exists.
+
+## Knowledge Learned
+
+Today I learned:
+
+- How to combine user input with XML parsing.
+- Why data should be extracted before comparison inside a loop.
+- The difference between a boolean flag and an integer counter.
+- How to search multiple XML elements using `findall()`.
+- How to build an interactive filtering feature instead of printing all available data.
+
+## Challenges
+
+- Initially attempted to use a boolean value as a counter.
+- Learned that boolean variables only represent True/False, while counting requires an integer variable.
+
+## Outcome
+
+RedHawk Copilot can now search for a specific service inside an Nmap XML scan and display every matching result together with detailed service information.
+
