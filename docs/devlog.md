@@ -493,3 +493,36 @@ Today I learned:
 
 RedHawk Copilot can now search for a specific service inside an Nmap XML scan and display every matching result together with detailed service information.
 
+# Dev Log
+
+## Date
+2026-06-29
+
+## Objective
+Refactor the codebase by separating host information display into its own reusable function.
+
+## Work Completed
+
+- Created the `print_host_information()` function.
+- Learned how to pass parameters into functions.
+- Removed duplicate host information printing from inside the service loop.
+- Moved host information display outside the loop to avoid repeated output.
+- Improved the readability of the `main()` function.
+- Continued following the Single Responsibility Principle (SRP).
+
+## Problems Faced
+
+- Initially defined the function inside `main()`, limiting its scope.
+- Called the function without required arguments, resulting in a `TypeError`.
+- Accidentally placed the function call inside the loop, causing host information to be printed multiple times.
+
+## Solution
+
+- Moved the helper function outside `main()`.
+- Passed `host_state` and `ip_address` as function parameters.
+- Moved the function call before the service enumeration loop.
+
+## Result
+
+Host information is now printed only once, and the code is cleaner, more modular, and easier to maintain.
+

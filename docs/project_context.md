@@ -157,3 +157,12 @@ Completed Features
 Current Development Focus
 
 Preparing RedHawk Copilot for automated service analysis and future vulnerability assessment.
+
+# Project Context Update
+
+## Current State
+
+The project now separates host information presentation from the main application workflow.
+
+This is the first architectural refactoring step toward a modular reconnaissance engine where each function has a clearly defined responsibility.
+

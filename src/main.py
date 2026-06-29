@@ -13,6 +13,13 @@ Version:
 """
 from parser import load_xml
 
+# Printing the host information
+def print_host_information(host_state, ip_address):
+    print(f"\nHost Information")
+    print(f"-" * 20)
+    print(f"Status : {host_state}")
+    print(f"IP Address : {ip_address}")
+
 def main():
     """
     Main function.
@@ -37,17 +44,14 @@ def main():
 
     print("XML loaded successfully.")
 
-    # Printing the host information
-    print("\nHost Information")
-    print("-"*20)
-    print("Status : ", host_state)
-    print("IP Address : ", ip_address)
-
     # Getting Input from user about the Targeted Service
     target_service = input("Enter the Target Service : ")
     target_service = target_service.lower()
     target_service = target_service.strip()
     print("Target Service is : ", target_service)
+
+    # Printing the Host Information
+    print_host_information(host_state, ip_address)
 
     # Printing the Targeted services with their Ports and other information
     print("\nOpen Ports")

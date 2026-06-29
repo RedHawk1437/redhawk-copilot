@@ -146,3 +146,24 @@ These two variables solve different problems and should not replace each other.
 ### Personal Reflection
 
 Today I successfully implemented my first interactive search feature using Python and XML. I can now filter scan results instead of printing every available service.
+
+# Learning Journal
+
+## Date
+2026-06-29
+
+## What I Learned
+
+Today I learned several important software engineering concepts.
+
+- Functions should perform only one responsibility.
+- A function should receive only the data it needs.
+- Parameters should not be overwritten inside the function.
+- Helper functions should generally be defined outside `main()` so they can be reused.
+- The placement of a function call matters as much as the function itself.
+- Separating presentation logic from data extraction improves readability.
+
+## Personal Reflection
+
+I can now clearly see how breaking a large program into smaller functions makes the code easier to understand and maintain. This approach feels much more professional than writing everything inside one large `main()` function.
+
