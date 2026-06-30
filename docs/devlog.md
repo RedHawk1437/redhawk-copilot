@@ -526,3 +526,102 @@ Refactor the codebase by separating host information display into its own reusab
 
 Host information is now printed only once, and the code is cleaner, more modular, and easier to maintain.
 
+# DevLog
+
+**Date:** 2026-06-30
+
+## Objective
+
+Continue refactoring `main.py` by identifying responsibilities that should become independent reusable functions.
+
+---
+
+## Work Completed
+
+### Refactored User Input
+
+Created a dedicated function:
+
+```python
+def get_target_service():
+```
+
+Responsibilities:
+
+- Ask the user for the target service.
+- Normalize the input using:
+  - `.lower()`
+  - `.strip()`
+- Return the cleaned service name.
+
+---
+
+### Improved Main Function
+
+`main()` no longer handles user input directly.
+
+Instead it now delegates that responsibility to:
+
+```python
+target_service = get_target_service()
+```
+
+making the program cleaner and easier to understand.
+
+---
+
+### Code Simplification
+
+Reduced:
+
+```python
+target_service = target_service.lower()
+target_service = target_service.strip()
+```
+
+to:
+
+```python
+target_service = input(...).lower().strip()
+```
+
+making the code shorter without changing behavior.
+
+---
+
+### Software Architecture Discussion
+
+Analyzed the remaining responsibilities inside `main()`.
+
+Current architecture:
+
+- XML loading
+- XML parsing
+- Host information printing
+- User input
+- Port analysis
+- Result reporting
+
+Identified that the next responsibility to extract should be the complete port analysis logic.
+
+Planned function:
+
+```python
+def port_analyzer(all_ports, target_service):
+```
+
+---
+
+## Lessons Learned
+
+- Every function should have one clear responsibility.
+- Parameters should contain only the information a function actually needs.
+- Passing raw data is better than passing many small derived values.
+- Refactoring should be performed gradually instead of rewriting everything at once.
+
+---
+
+## Next Goal
+
+Move the complete port processing loop from `main()` into a reusable `port_analyzer()` function.
+

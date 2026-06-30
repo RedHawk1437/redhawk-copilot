@@ -130,3 +130,40 @@ Completed
 - Improved overall program structure.
 - Successfully maintained existing functionality after refactoring.
 
+# Mission Log
+
+## Mission Date
+
+2026-06-30
+
+---
+
+## Mission Objective
+
+Continue refactoring `main.py` into smaller reusable functions.
+
+---
+
+## Mission Result
+
+Success.
+
+Completed:
+
+- Created `get_target_service()`.
+- Simplified user input normalization.
+- Improved readability of `main()`.
+- Planned extraction of port analysis into a separate function.
+
+---
+
+## Next Mission
+
+Implement:
+
+```python
+port_analyzer(all_ports, target_service)
+```
+
+and move the entire port filtering logic into that function while keeping `main()` responsible only for coordinating program flow.
+

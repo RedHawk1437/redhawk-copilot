@@ -167,3 +167,37 @@ Today I learned several important software engineering concepts.
 
 I can now clearly see how breaking a large program into smaller functions makes the code easier to understand and maintain. This approach feels much more professional than writing everything inside one large `main()` function.
 
+# Learning Journal
+
+**Date:** 2026-06-30
+
+## What I Learned Today
+
+Today I learned that software engineering is not only about writing working code.
+
+It is also about separating responsibilities into small reusable functions.
+
+I created a new function named:
+
+```python
+get_target_service()
+```
+
+which performs only one job:
+
+- receive user input
+- normalize it
+- return the cleaned value
+
+I also learned that a function should receive only the data it actually needs.
+
+Instead of passing many individual variables, it is often better to pass the original data structure and let the function perform its own processing.
+
+For the next refactoring step, I designed:
+
+```python
+def port_analyzer(all_ports, target_service):
+```
+
+This helped me understand that software architecture starts with deciding what responsibility belongs inside each function.
+

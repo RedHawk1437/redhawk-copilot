@@ -20,6 +20,14 @@ def print_host_information(host_state, ip_address):
     print(f"Status : {host_state}")
     print(f"IP Address : {ip_address}")
 
+#Get Target Service from User
+def get_target_service():
+    print("\nTarget Service")
+    print("-" * 20)
+    target_service = input("Enter the Target Service : ").lower().strip()
+    print(f"Searching For Target Service : {target_service} ")
+    return target_service
+
 def main():
     """
     Main function.
@@ -44,14 +52,11 @@ def main():
 
     print("XML loaded successfully.")
 
-    # Getting Input from user about the Targeted Service
-    target_service = input("Enter the Target Service : ")
-    target_service = target_service.lower()
-    target_service = target_service.strip()
-    print("Target Service is : ", target_service)
-
     # Printing the Host Information
     print_host_information(host_state, ip_address)
+
+    # Getting Input from the Targeted Service Function
+    target_service = get_target_service()
 
     # Printing the Targeted services with their Ports and other information
     print("\nOpen Ports")

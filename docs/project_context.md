@@ -166,3 +166,25 @@ The project now separates host information presentation from the main applicatio
 
 This is the first architectural refactoring step toward a modular reconnaissance engine where each function has a clearly defined responsibility.
 
+# Project Context Update
+
+## Current Progress
+
+The application has been partially refactored.
+
+Current reusable functions:
+
+- print_host_information()
+- get_target_service()
+
+Remaining responsibility inside `main()`:
+
+- XML loading
+- XML parsing
+- Port analysis
+- Final reporting
+
+Next architectural milestone:
+
+Create a reusable `port_analyzer()` function responsible for searching, filtering, and displaying matching services.
+
