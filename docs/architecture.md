@@ -20,17 +20,15 @@ The project focuses on:
 
 User
     ↓
-main.py
+main()
     ↓
-parser.py
+load_xml()
     ↓
-XML Data
+print_host_information()
     ↓
-Analyzer (Future)
+get_target_service()
     ↓
-Recommendation Engine (Future)
-    ↓
-Report Generator (Future)
+port_analyzer()
 
 ---
 
@@ -211,3 +209,50 @@ main()
 One Function = One Responsibility
 
 The project is gradually being refactored into small, reusable, and independent functions.
+
+# RedHawk Copilot Architecture
+
+## Current Architecture
+
+```
+main()
+│
+├── load_xml()
+├── print_host_information()
+├── get_target_service()
+└── port_analyzer()
+```
+
+---
+
+## Future Architecture
+
+```
+main()
+│
+├── load_xml()
+├── print_host_information()
+├── get_target_service()
+├── port_analyzer()
+├── print_matching_ports()
+├── print_summary()
+├── recommendation_engine()
+└── report_generator()
+```
+
+---
+
+## Design Philosophy
+
+RedHawk Copilot follows the **Single Responsibility Principle (SRP)**.
+
+Each function should perform one clear responsibility.
+
+The `main()` function should act only as the program orchestrator, while individual functions handle specific tasks independently.
+
+This architecture improves:
+
+- Readability
+- Maintainability
+- Reusability
+- Scalability

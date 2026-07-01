@@ -194,3 +194,59 @@ Create a dedicated function:
 print_matching_ports()
 
 This will completely separate data analysis from data presentation.
+
+# Mission Log
+
+---
+
+# Mission 00
+
+## Status
+
+✅ Completed
+
+## Result
+
+- XML loading implemented.
+- XML parsing completed.
+- Host information extraction completed.
+
+## Lessons Learned
+
+- Understand XML tree navigation.
+- Use `find()` and `get()` correctly.
+- Extract XML data safely.
+
+---
+
+# Mission 01
+
+## Status
+
+✅ Completed
+
+## Result
+
+- Interactive target service filtering implemented.
+- Host information refactored into a reusable function.
+- Target service input refactored into a reusable function.
+- Port analysis refactored into a dedicated reusable function.
+
+## Lessons Learned
+
+- Single Responsibility Principle.
+- Function parameters.
+- Multiple return values.
+- Gradual refactoring.
+- Cleaner architecture.
+
+---
+
+# Next Mission
+
+Create:
+
+- `print_matching_ports()`
+
+This will completely separate data analysis from data presentation.
+

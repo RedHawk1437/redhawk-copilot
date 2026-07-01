@@ -239,3 +239,58 @@ Instead of changing the entire program at once, it is better to refactor one res
 A function should have only one primary responsibility.
 
 This principle makes programs easier to read, debug, and extend.
+
+# Learning Journal
+
+This document records important programming concepts learned during the development of RedHawk Copilot.
+
+---
+
+## Today's Learning
+
+### Function Ownership
+
+A function should create and manage its own internal variables whenever possible.
+
+---
+
+### Multiple Return Values
+
+Python functions can return multiple values.
+
+Example:
+
+```python
+return target_service_found, target_service_count
+```
+
+These values can be received as:
+
+```python
+target_service_found, target_service_count = port_analyzer(
+    all_ports,
+    target_service
+)
+```
+
+---
+
+### Gradual Refactoring
+
+Refactoring should be performed step by step instead of changing the entire program at once.
+
+Small improvements are easier to test, debug, and maintain.
+
+---
+
+### Clean Architecture
+
+Each function should perform only one responsibility.
+
+Following this principle makes software easier to extend in the future.
+
+---
+
+## Key Takeaway
+
+Small, focused functions produce cleaner, more maintainable software than large functions with multiple responsibilities.

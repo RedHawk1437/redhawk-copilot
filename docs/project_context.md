@@ -33,12 +33,14 @@ Completed
 - XML Parsing
 - XML Navigation
 - Host Information Extraction
+- Port Extraction
+- Service Detection
+- Interactive Service Filtering
+- Function Refactoring
 
 Pending
 
 - Multiple Host Parsing
-- Port Extraction
-- Service Detection
 - Analyzer
 - Recommendation Engine
 - AI Integration
@@ -211,3 +213,53 @@ The project is being developed using the Single Responsibility Principle.
 Each function should perform one clear task.
 
 The long-term goal is to make `main()` responsible only for controlling the program flow while delegating all work to reusable functions.
+
+# Project Context
+
+## Project Name
+
+RedHawk Copilot
+
+---
+
+## Current Progress
+
+### Completed
+
+- XML loading
+- XML parsing
+- Host information extraction
+- Interactive target service input
+- Service filtering
+- Target service counting
+- Host information function
+- Target service function
+- Port analyzer function
+
+---
+
+## In Progress
+
+- Refactoring application architecture
+- Reducing responsibilities of `main()`
+
+---
+
+## Planned Features
+
+- Port printing function
+- Summary printing function
+- Service recommendation engine
+- Vulnerability correlation
+- Report generation
+
+---
+
+## Design Philosophy
+
+The project follows the **Single Responsibility Principle (SRP).**
+
+Every function should perform one clear responsibility.
+
+`main()` should orchestrate the program instead of containing business logic.
+
