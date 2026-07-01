@@ -167,3 +167,30 @@ port_analyzer(all_ports, target_service)
 
 and move the entire port filtering logic into that function while keeping `main()` responsible only for coordinating program flow.
 
+# Mission Log
+
+## Mission Completed
+
+✅ Refactor Port Analysis into a Reusable Function
+
+### Completed
+
+- Created `port_analyzer()`.
+- Moved service analysis logic from `main()`.
+- Returned analysis results back to `main()`.
+- Verified successful execution.
+
+## Current Architecture
+
+main()
+├── print_host_information()
+├── get_target_service()
+└── port_analyzer()
+
+## Next Mission
+
+Create a dedicated function:
+
+print_matching_ports()
+
+This will completely separate data analysis from data presentation.

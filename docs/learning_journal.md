@@ -201,3 +201,41 @@ def port_analyzer(all_ports, target_service):
 
 This helped me understand that software architecture starts with deciding what responsibility belongs inside each function.
 
+# Learning Journal
+
+## What I Learned Today
+
+Today I learned several important software engineering concepts.
+
+### Function Ownership
+
+A function should create and manage its own internal variables whenever possible.
+
+### Multiple Return Values
+
+Python functions can return multiple values.
+
+Example:
+
+```python
+return target_service_found, target_service_count
+```
+
+These values can be received like this:
+
+```python
+target_service_found, target_service_count = port_analyzer(
+    all_ports,
+    target_service
+)
+```
+
+### Gradual Refactoring
+
+Instead of changing the entire program at once, it is better to refactor one responsibility at a time.
+
+### Clean Architecture
+
+A function should have only one primary responsibility.
+
+This principle makes programs easier to read, debug, and extend.

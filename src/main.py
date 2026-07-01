@@ -28,6 +28,41 @@ def get_target_service():
     print(f"Searching For Target Service : {target_service} ")
     return target_service
 
+#Analyze all open ports and find the requested service.
+def port_analyzer(all_ports, target_service):
+    """
+    Analyze all open ports and find the requested service.
+
+    Returns:
+        target_service_found
+        target_service_count
+    """
+    # Initialize analysis state
+    target_service_found = False
+    target_service_count = 0
+    for port in all_ports:
+        state = port.find("state")
+        service = port.find("service")
+        port_id = port.get("portid")
+        protocol = port.get("protocol")
+        port_state = state.get("state")
+        service_name = service.get("name")
+
+        # Compare the targeted service with the XML data
+        if service_name == target_service:
+            target_service_found = True
+            service_product = service.get("product")
+            service_version = service.get("version")
+            print("-" * 20)
+            print(f"Port : {port_id}/{protocol}")
+            print(f"Port State :  {port_state}")
+            print(f"Port Service :  {service_name}")
+            print(f"Port Product :  {service_product}")
+            print(f"Port Version :  {service_version}")
+            target_service_count += 1
+    return target_service_found, target_service_count
+
+
 def main():
     """
     Main function.
@@ -61,31 +96,11 @@ def main():
     # Printing the Targeted services with their Ports and other information
     print("\nOpen Ports")
 
-    #Making a Service Found Condition
-    target_service_found = False
-    target_service_count = 0
-
-    for port in all_ports:
-        state = port.find("state")
-        service =port.find("service")
-        port_id = port.get("portid")
-        protocol = port.get("protocol")
-        port_state = state.get("state")
-        service_name = service.get("name")
-
-
-        # Compare the targeted service with the XML data
-        if service_name == target_service:
-            target_service_found = True
-            service_product = service.get("product")
-            service_version = service.get("version")
-            print("-" * 20)
-            print(f"Port : {port_id}/{protocol}")
-            print(f"Port State :  {port_state}")
-            print(f"Port Service :  {service_name}")
-            print(f"Port Product :  {service_product}")
-            print(f"Port Version :  {service_version}")
-            target_service_count += 1
+    # Analyze requested service
+    target_service_found, target_service_count = port_analyzer(
+        all_ports,
+        target_service
+    )
 
     # Target Service Status
     if not target_service_found:

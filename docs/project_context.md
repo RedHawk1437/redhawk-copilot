@@ -188,3 +188,26 @@ Next architectural milestone:
 
 Create a reusable `port_analyzer()` function responsible for searching, filtering, and displaying matching services.
 
+# Project Context
+
+## Current Progress
+
+Completed Features
+
+- XML loading
+- XML parsing
+- Host information extraction
+- Interactive target service input
+- Service filtering
+- Target service counting
+- Host information function
+- Target service function
+- Port analyzer function
+
+## Current Design Philosophy
+
+The project is being developed using the Single Responsibility Principle.
+
+Each function should perform one clear task.
+
+The long-term goal is to make `main()` responsible only for controlling the program flow while delegating all work to reusable functions.

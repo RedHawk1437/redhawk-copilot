@@ -179,3 +179,35 @@ Interactive Service Filtering
     │
     ▼
 Matching Service Output
+
+
+# Architecture
+
+## Current Architecture
+
+main()
+│
+├── load_xml()
+│
+├── print_host_information()
+│
+├── get_target_service()
+│
+└── port_analyzer()
+
+## Planned Architecture
+
+main()
+│
+├── load_xml()
+├── print_host_information()
+├── get_target_service()
+├── port_analyzer()
+├── print_matching_ports()
+└── print_summary()
+
+## Design Principle
+
+One Function = One Responsibility
+
+The project is gradually being refactored into small, reusable, and independent functions.

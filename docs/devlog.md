@@ -625,3 +625,24 @@ def port_analyzer(all_ports, target_service):
 
 Move the complete port processing loop from `main()` into a reusable `port_analyzer()` function.
 
+# Refactor Port Analysis into a Reusable Function
+
+## Objective
+
+Continue reducing the responsibilities of `main()` by moving the port analysis logic into its own dedicated function.
+
+## Completed Tasks
+
+- Created a new function: `port_analyzer(all_ports, target_service)`.
+- Moved the complete service analysis loop from `main()` into the new function.
+- Implemented multiple return values:
+  - `target_service_found`
+  - `target_service_count`
+- Updated `main()` to receive analysis results from `port_analyzer()`.
+- Successfully tested the program after refactoring.
+
+## Outcome
+
+The program behavior remains exactly the same, but the code structure is now cleaner and more modular.
+
+`main()` is becoming an orchestration function instead of containing all business logic.
